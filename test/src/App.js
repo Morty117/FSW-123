@@ -17,3 +17,4 @@ function App() {
 
 // Every component you create NEEDS TO BE EXPORTED else it can't be used
 export default App;
+
