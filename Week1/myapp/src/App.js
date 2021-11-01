@@ -1,17 +1,15 @@
 import Todos from './Todolist'
-
+// {Todos} will import the array instead of the object 
+//console.log(Todos.map(todo => <p>{todo}</p>))
+console.log(Todos)
 function DisplayTodo(){
-  let todo1 = Todos[0]
-  let todo2 = Todos[1]
-  let todo3 = Todos[2]
 
   return(
     <>
-    <input type='checkbox'>{todo1}</input>
-    <input type='checkbox'>{todo2}</input>
-    <input type='checkbox'>{todo3}</input>
+    {Todos.map(todo => <p key={todo}><input type='checkbox'></input>{todo}</p>)}
     </>
   )
 }
+// keys re-render only the specific items the application changed 
 
 export default DisplayTodo
