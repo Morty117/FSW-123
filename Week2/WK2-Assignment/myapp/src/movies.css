@@ -1,0 +1,10 @@
+.movie-container {
+    text-align: center;
+    margin: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    
+    justify-content:center;
+    align-items: center;
+}
