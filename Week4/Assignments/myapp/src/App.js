@@ -1,11 +1,13 @@
 import TodoList from './TodoList'
 import {useState} from 'react'
 import {todoList} from './Store'
+import { v4 as uuidv4 } from 'uuid'
 //console.log(todos)
 
 function App(){
 
    const [todos, setTodos] = useState(todoList)
+   const [addTodo, setAddTodo] = useState("")
 
    const completeTodo = (id) => {
       const tempTodos = [...todos]
@@ -26,7 +28,7 @@ function App(){
     
     const index = tempTodos.findIndex(item => item._id === id)
 
-    const filteredTodos = tempTodos.splice(index, 1)
+    tempTodos.splice(index, 1)
     // tempTodos.filter(item => item._id !== id)
  
     setTodos(tempTodos)
@@ -34,6 +36,13 @@ function App(){
 
   return(
     <>
+    <input onChange={(event) => {
+        const {name, value} = event.target
+        setAddTodo(value)
+      }} name="text"/>
+      <button onClick={() => {
+        setTodos([...todos, {text:addTodo, isComplete: false, _id: uuidv4}])
+      }}>Add Todo</button>
       <TodoList items={todos} completeTodo={completeTodo} deleteTodo={deleteTodo} />
     </>
   )
