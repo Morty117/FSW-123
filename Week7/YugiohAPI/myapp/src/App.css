@@ -40,6 +40,22 @@
     border-radius: 5px;
 }
 
+.about-header{
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #FF9800;
+    margin: 5px 15%;
+    border-radius: 5px;
+}
+
+.about-main{
+    text-align: center;
+    font-size: 20px;
+    margin: 1% 25%;
+    padding: 1%;
+    border: 1px solid #f2f2f2;
+}
+
 .your-card-header{
     text-align: center;
     border-bottom: 1px solid #f2f2f2;

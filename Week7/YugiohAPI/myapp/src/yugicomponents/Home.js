@@ -31,8 +31,7 @@ function Home(){
 
             axios.post("http://api.bryanuniversity.edu/anthonyHernandez/list", drawCard)
               .then(res => {
-                console.log(res)
-                setDrawCard(prevstate => ([...prevstate, drawCard]))
+                setDrawCard(prevstate => ([...prevstate, res.data]))
               })
           })
           .catch(err => console.log(err))
